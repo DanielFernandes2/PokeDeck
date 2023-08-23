@@ -1,5 +1,8 @@
+import Title from "@/components/Title";
+
 export default function Home() {
-  return ( //JSX
+  return (
+    <>
     <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8">
       <h1 className="text-4xl text-red-600 font-bold uppercase mx-8">PokeDeck</h1>
       <ul>
@@ -10,5 +13,11 @@ export default function Home() {
         </li>
       </ul>
     </nav>
+
+      <Title>Minhas Cartas</Title>
+      <Title>1° Geração</Title>
+
+
+    </>
   )
 }
