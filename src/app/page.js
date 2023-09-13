@@ -7,12 +7,14 @@ export default function Home() {
     //mock
     const pokes = [
       {
+        id: 1,
         titulo: "Charizard",
         tipagem: "Fogo",
         tipagem2: "Voador",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpv5Nogub15Gzht9hZiIzAsPX8XQLCtAxZnpXRrYw-zrzMV4At2uvjkqaf52maAhUhS74&usqp=CAU"
       },
       {
+        id: 2,
         titulo: "Talonflame",
         tipagem: "Fogo",
         tipagem2: "Voador",
