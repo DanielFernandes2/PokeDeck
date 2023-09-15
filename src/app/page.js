@@ -1,29 +1,25 @@
 import Title from "@/components/Titulo";
 import CardPoke from "@/components/CardPoke";
 
+async function carregarDados() {
+  const url = "https://pokeapi.co/api/v2/pokemon";
+  const response = await fetch(url);
+  const json = await response.json();
+  const resultados = json.results;
 
+  const pokemons = await Promise.all(
+    resultados.map(async (result) => {
+      const pokemonResponse = await fetch(result.url);
+      const pokemonData = await pokemonResponse.json();
+      return pokemonData;
+    })
+  );
 
-export default function Home() {
-    //mock
-    const pokes = [
-      {
-        id: 1,
-        titulo: "Charizard",
-        tipagem: "Fogo",
-        tipagem2: "Voador",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpv5Nogub15Gzht9hZiIzAsPX8XQLCtAxZnpXRrYw-zrzMV4At2uvjkqaf52maAhUhS74&usqp=CAU"
-      },
-      {
-        id: 2,
-        titulo: "Talonflame",
-        tipagem: "Fogo",
-        tipagem2: "Voador",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48tESSCgTQDDu3npiQNvTNflhqqyB_vGfg9EwBpBY0K1R54l9mXY16x6r_1B-tmWdJkI&usqp=CAU"
-      }
+  return pokemons;
+}
   
-    ]
-  
-
+export default async function Home() {
+  const pokes = await carregarDados();
   return (
     <>
     <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8">

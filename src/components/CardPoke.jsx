@@ -1,8 +1,29 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import { HeartIcon } from '@heroicons/react/24/solid'
 import { HeartIcon as HeartIconoutline } from '@heroicons/react/24/outline'
+
+const typeColors = {
+  normal: "gray",
+  fire: "red",
+  water: "blue",
+  electric: "yellow",
+  grass: "green",
+  ice: "cyan",
+  fighting: "orange",
+  poison: "purple",
+  ground: "brown",
+  flying: "indigo",
+  psychic: "pink",
+  bug: "lime",
+  rock: "brown",
+  ghost: "indigo",
+  steel: "gray",
+  dragon: "red",
+  dark: "black",
+  fairy: "pink",
+};
+
 
 export default function CardPoke({poke}){
   const [ favorito, setFavorito ] = useState(false) //hooks
@@ -43,20 +64,34 @@ export default function CardPoke({poke}){
             />
           }
 
-
-          <img className="rounded h-56 w-56" src={poke.img} alt="imagem do pokemon"/>
+          
+          <img
+            className="rounded w-96"
+            src={poke.sprites.front_default}
+            alt="imagem do pokemon"
+          />
 
           <span className="font-bold text-lg w-full line-clamp-1 text-center">
-            {poke.titulo}
+            {poke.name}
           </span>
+          
 
-      <div className="flex items-center gap-2">
-
-        <span className="text-slate-400">{poke.tipagem}</span>
-        <span className="text-slate-400">{poke.tipagem2}</span>
-
-      </div>
-
+          <div className="flex items-center gap-2">
+            {poke.types.map((typeData) => (
+              <span
+                key={typeData.type.name}
+                style={{
+                  backgroundColor: typeColors[typeData.type.name],
+                  color: "white",
+                  padding: "2px 4px",
+                  borderRadius: "4px",
+                }}
+              >
+                {typeData.type.name}
+              </span>
+            ))}
+          </div>
+          
       <a href="#" className="bg-pink-600 w-full text-center rounded py-1 hover:bg-pink-500">detalhes</a>
 
     </div>
