@@ -29,26 +29,38 @@ export default function CardPoke({poke}){
   const [ favorito, setFavorito ] = useState(false) //hooks
 
   useEffect(() => {
-    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
-    const favorito = favoritos.find(f => f.id === poke.id)
-    setFavorito(favorito)
-  }, [])
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const favorito = favoritos.find((f) => f.id === poke.id);
+    setFavorito(!!favorito);
+  }, [poke.id]);
 
-    function favoritar(){
-      setFavorito(true)
-      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
-      favoritos.push(poke)
-      localStorage.setItem("favoritos", JSON.stringify(favoritos))
+  function favoritar() {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    favoritos.push(poke);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    setFavorito(true);
 
-    }
+    // Adicionar o Pokémon aos favoritos no arquivo favoritos.json
+    fetch("http://localhost:3001/favoritos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(poke),
+    });
+  }
 
-    function desfavoritar(){
-      setFavorito(false)
-      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
-      const favoritosAtualizados = favoritos.filter(f => f.id !== poke.id)
-      localStorage.setItem("favoritos", JSON.stringify(favoritosAtualizados))
+  function desfavoritar() {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const favoritosAtualizados = favoritos.filter((f) => f.id !== poke.id);
+    localStorage.setItem("favoritos", JSON.stringify(favoritosAtualizados));
+    setFavorito(false);
 
-    }
+    // Remover o Pokémon dos favoritos no arquivo favoritos.json
+    fetch(`http://localhost:3001/favoritos/${poke.id}`, {
+      method: "DELETE",
+    });
+  }
   
     return(
         <div className="flex flex-col items-center justify-between w-40 m-2 gap-1 relative">

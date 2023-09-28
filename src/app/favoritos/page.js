@@ -2,24 +2,15 @@ import Title from "@/components/Titulo";
 import CardPoke from "@/components/CardPoke";
 
 async function carregarDados() {
-  const url = "https://pokeapi.co/api/v2/pokemon";
+  const url = "http://localhost:3001/favoritos";
   const response = await fetch(url);
-  const json = await response.json();
-  const resultados = json.results;
+  const favoritos = await response.json();
 
-  const pokemons = await Promise.all(
-    resultados.map(async (result) => {
-      const pokemonResponse = await fetch(result.url);
-      const pokemonData = await pokemonResponse.json();
-      return pokemonData;
-    })
-  );
-
-  return pokemons;
+  return favoritos;
 }
   
 export default async function Minhas_Cartas() {
-  const pokes = await carregarDados();
+    const favoritos = await carregarDados();
   return (
     <>
     <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8">
@@ -36,7 +27,9 @@ export default async function Minhas_Cartas() {
       <Title>Minhas Cartas</Title>
 
       <section className="flex gap-2 flex-wrap">
-        {pokes.map( poke => <CardPoke poke={poke}/>)}
+        {favoritos.map((poke) => (
+          <CardPoke key={poke.id} poke={poke} />
+        ))}
       </section>
 
       <Title>1° Geração</Title>
