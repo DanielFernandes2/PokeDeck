@@ -22,9 +22,9 @@ Pronto seu projeto já está totalmente aberto!!!!
 
 Observação: Quando você favoritar um pokemon e for na parte de favorito não terá nenhum, lembre-se de dar um "ctrl+snift+r" para limpar o cache da pagina e reiniciar a pagina
 
-Lembre-se tambem de editar seu email e sua senha na pasta LOGIN arquivo PAGE.JSX, troque na function login onde está email=== "seu email aqui" e senha=== "sua senha aqui" (não esqueça de colocar seu email e senha entre "" )
+Lembre-se tambem de editar seu email e sua senha na pasta LOGIN arquivo PAGE.JSX, troque na function login onde está email=== "123@gmail.com" e senha=== "123" (não esqueça de colocar seu email e senha entre "" )
 
-Você tambem tera que colocar o seu email na pasta ACTIONS no arquivo AUTH.JS, troque na function serverLogin do lado do "user_email", "seu email aqui" (não esqueça de colocar seu email entre "" )
+Você tambem tera que colocar o seu email na pasta ACTIONS no arquivo AUTH.JS, troque na function serverLogin troque o "123@gmail.com" (não esqueça de colocar seu email entre "" )
 
 Agora você tem livre acesso ao projeto com seu propio login
 
