@@ -28,4 +28,6 @@ Você tambem tera que colocar o seu email na pasta ACTIONS no arquivo AUTH.JS, t
 
 Agora você tem livre acesso ao projeto com seu propio login
 
+Se você for colocar esse projeto num Vercel por exemplo ele não pegara a pagina de favorito, porque infelizmente a API de pokemon não tem um servidor, então tive que fazer uma API falsa rodando um servidor local, então só pega quando você rodar pelo Visual Studio Code
+
 Aproveite =D
