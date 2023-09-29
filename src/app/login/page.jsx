@@ -13,7 +13,7 @@ export default function login(){
 
     function login(e){
         e.preventDefault()
-        if (email === "seu email aqui" && senha === "sua senha aqui"){
+        if (email === "123@gmail.com" && senha === "123"){
             serverLogin()
             push("/")
         }else{
