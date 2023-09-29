@@ -16,7 +16,7 @@ Para rodar esse projeto faça esse passo a passo
 
 8° Cole esse codigo logo que terminar a instalação "Set-ExecutionPolicy Unrestricted"
 
-9° Agora vamos abrir o servidor da API fake colando esse comando "json-server --watch favoritos.json --port 3001" *lembrando que a porta 3000 está sendo usada, por isso estou abrindo na porta 30001, se tiver outros projetos abertos é só colocar a porta que quiser 3002, 3003.....
+9° Agora vamos abrir o servidor da API fake colando esse comando "json-server --watch favoritos.json --port 3001" *lembrando que a porta 3000 está sendo usada, por isso estou abrindo na porta 3001, se tiver outros projetos abertos é só colocar a porta que quiser 3002, 3003.....
 
 
 Pronto seu projeto já está totalmente aberto!!!!
