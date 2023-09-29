@@ -1,5 +1,6 @@
 import Title from "@/components/Titulo";
 import CardPoke from "@/components/CardPoke";
+import NavBar from "@/components/navbar";
 
 async function carregarDados() {
   const url = "http://localhost:3001/favoritos";
@@ -13,16 +14,7 @@ export default async function Minhas_Cartas() {
     const favoritos = await carregarDados();
   return (
     <>
-    <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8">
-      <h1 className="text-4xl text-red-600 font-bold uppercase mx-8">PokeDeck</h1>
-      <ul>
-        <li>
-          <a href="/favoritos" className="text-zinc-200">Minhas Cartas</a>
-          <a href="#" className="mx-8 text-zinc-200"> Geração</a>
-          <a href="#" className="mx-8 text-zinc-200"> Sobre</a>
-        </li>
-      </ul>
-    </nav>
+      <NavBar />
 
       <Title>Minhas Cartas</Title>
 
@@ -31,9 +23,6 @@ export default async function Minhas_Cartas() {
           <CardPoke key={poke.id} poke={poke} />
         ))}
       </section>
-
-      <Title>1° Geração</Title>
-
 
     </>
   )
