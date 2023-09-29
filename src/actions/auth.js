@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers'
 
 export async function serverLogin(){
-    cookies().set("user_email", "danicfernandes8@gmail.com", {
+    cookies().set("user_email", "seu email aqui", {
         maxAge: 60 * 60 * 24 * 7 // 7 dias
     })
 }
