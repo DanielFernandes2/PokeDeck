@@ -1,22 +1,41 @@
-Para rodar esse projeto faça esse passo a passo
+# Para rodar esse projeto faça esse passo a passo
 
 1° Abra o Visual Studio Code
 
-2° No terminal cole esse codigo "npm i"
+2° No terminal cole esse codigo 
+```
+npm i
+```
 
-3° Depois da instalação cole esse codigo que abrira o servidor na porta 3000 "npm run dev"
-
-4° Abra um segundo terminal e cole esse codigo "npm i react-hot-toast"
-
+3° Depois da instalação cole esse codigo que abrira o servidor na porta 3000 
+```
+npm run dev
+```
+4° Abra um segundo terminal e cole esse codigo 
+```
+npm i react-hot-toast
+```
 5° Abre o seu PowerShell como administrador
 
-6° Vá ate a pasta do arquivo por exemplo se o seu projeto estiver na pasta Downloads faça "cd Downloads" depois "cd PokeDeck-main"
+6° Vá ate a pasta do arquivo por exemplo se o seu projeto estiver na pasta Downloads faça 
+```
+cd Downloads
 
-7° Depois de entrar na pasta do projeto cole esse codigo "npm install -g json-server"
-
-8° Cole esse codigo logo que terminar a instalação "Set-ExecutionPolicy Unrestricted"
-
-9° Agora vamos abrir o servidor da API fake colando esse comando "json-server --watch favoritos.json --port 3001" *lembrando que a porta 3000 está sendo usada, por isso estou abrindo na porta 3001, se tiver outros projetos abertos é só colocar a porta que quiser 3002, 3003.....
+cd PokeDeck-main
+```
+7° Depois de entrar na pasta do projeto cole esse codigo 
+```
+npm install -g json-server
+```
+8° Cole esse codigo logo que terminar a instalação 
+```
+Set-ExecutionPolicy Unrestricted
+```
+9° Agora vamos abrir o servidor da API fake colando esse comando 
+```
+json-server --watch favoritos.json --port 3001
+```
+*lembrando que a porta 3000 está sendo usada, por isso estou abrindo na porta 3001, se tiver outros projetos abertos é só colocar a porta que quiser 3002, 3003.....
 
 Pronto seu projeto já está totalmente aberto!!!!
 
