@@ -13,7 +13,7 @@ export default function NavBar(){
     
     }
     return(
-        <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8">
+        <nav className="bg-neutral-950 p-2 flex gap-3 items-end space-x-8 items-center">
         <Link href={"/"}>
             <h1 className="text-4xl text-red-600 font-bold uppercase mx-8">PokeDeck</h1>
         </Link>
